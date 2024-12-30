@@ -112,9 +112,7 @@ def read_binary_buffer(f):
     field = np.fromfile(f, count=1, dtype=keytype).item()
 
     if field != 3:  # =  GmfDimension
-        raise ReadError("Invalid dimension code : " 
-                        + str(field) 
-                        + " it should be 3")
+        raise ReadError("Invalid dimension code : " + str(field) + " it should be 3")
 
     np.fromfile(f, count=1, dtype=postype)
 
